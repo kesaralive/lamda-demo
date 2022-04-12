@@ -1,4 +1,5 @@
 import pandas as pd
+import json
 
 
 def lambda_handler(event, context):
@@ -7,3 +8,7 @@ def lambda_handler(event, context):
     df = pd.DataFrame(data=alphabet)
     print(df)
     print('Done!')
+    return{
+        'statusCode': 200,
+        'body': json.dumps(alphabet)
+    }
